@@ -1,15 +1,21 @@
 .homeMain {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   background-color: #212121;
+  height: calc(100vh - 110px);
+  font-family: "Roboto", "sans-serif";
+}
+
+.homeMain .homeCol1 {
+  margin-right: 50px;
 }
 
 .homeMain .homeCol1 .homeCharacters,
 .homeMain .homeCol2 .homeComics {
-  height: 750px;
+  height: calc(100vh - 110px);
   width: 500px;
-  object-fit: contain;
+  object-fit: cover;
   position: relative;
   opacity: 0.1;
 }
@@ -18,7 +24,7 @@
   color: white;
   position: absolute;
   top: 40%;
-  left: 22%;
+  left: 5%;
   font-size: 24px;
 }
 
@@ -26,7 +32,7 @@
   color: white;
   position: absolute;
   top: 40%;
-  right: 22%;
+  right: 5%;
   font-size: 24px;
 }
 

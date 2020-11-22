@@ -1,19 +1,90 @@
 .charactersMain {
   display: flex;
-  width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 110px);
   background-color: #212121;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Roboto", sans-serif;
+}
+
+/* PAGINATION */
+.charactersMain .paginationCharacters {
+  width: 50px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.charactersMain .paginationCharacters > li {
+  color: #e62525;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-/* FIRST COLUMN */
+.charactersMain .paginationCharacters > li:hover {
+  color: whitesmoke;
+  font-weight: bold;
+  background-color: #e62525;
+  border-radius: 50%;
+  border: #e62525 solid 1px;
+  cursor: pointer;
+}
+
+/* CAROUSEL */
 
 .charactersMain .bqyzQp {
   height: 450px;
   display: flex;
   /* flex-direction: column; */
-  width: 1100px;
-  margin: 0 20px;
+  width: 1060px;
+  margin: 40px 10px;
+}
+
+.charactersMain .charactersCol1 .characterSearchForm {
+  width: 1060px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+.charactersMain .charactersCol1 .characterSearchForm > input {
+  width: 80%;
+  height: 30px;
+  font-size: 18px;
+  margin-right: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background-color: #dcdcdc;
+  color: #212121;
+  font-family: inherit;
+}
+
+.charactersMain .charactersCol1 .characterSearchForm > button {
+  width: calc(20% - 5px);
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  color: #212121;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: inherit;
+}
+
+.charactersMain .charactersCol1 .characterSearchForm > button:hover {
+  color: #e62529;
 }
 
 .charactersMain .bqyzQp .kNBmiK {
@@ -26,7 +97,15 @@
 }
 
 .charactersMain .bqyzQp .kNBmiK .bVoXXg {
-  width: 550px;
+  width: 350px;
+}
+
+.charactersMain .bqyzQp .kNBmiK .sc-gzVnrw {
+  width: 700px;
+}
+
+.charactersMain .bqyzQp .sc-bwzfXH {
+  z-index: 1;
 }
 
 .charactersMain .bqyzQp .charactersWrapper {
@@ -45,6 +124,31 @@
   background-color: #ffffff;
   color: #212121;
   border-radius: 0 5px 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.charactersMain .bqyzQp .charactersWrapper .characterInfo > p:first-child {
+  font-weight: bold;
+  text-align: center;
+}
+
+.charactersMain .bqyzQp .charactersWrapper .characterInfo > p:nth-child(2) {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 15px;
+}
+
+.charactersMain .bqyzQp .charactersWrapper .characterInfo > div {
+  align-self: flex-end;
+}
+
+.charactersMain .bqyzQp .charactersWrapper .characterInfo > div:hover {
+  cursor: pointer;
 }
 
 /* MODAL FOR EACH CARACTER */
@@ -61,22 +165,100 @@
   top: 0;
 }
 
+.exitCharacter {
+  z-index: 3;
+  position: fixed;
+  top: 30px;
+  left: calc((100% - 950px) / 2);
+}
+.exitCharacter:hover {
+  cursor: pointer;
+}
+
 .characterComicInfo {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   height: 500px;
   width: 1000px;
   background-color: white;
   opacity: 1;
   border-radius: 10px;
-  align-items: center;
   padding: 10px;
   box-sizing: border-box;
   /* position: relative; */
   position: fixed;
-  left: 0;
+  left: calc((100% - 1000px) / 2);
   top: 50px;
   z-index: 3;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.characterComicInfo .characterComicInfoBox {
+  display: flex;
+  width: 450px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.characterComicInfo .characterComicInfoBox > img {
+  border-radius: 5px;
+}
+
+.characterComicInfo .characterComicInfoBox > div {
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.characterComicInfo .characterComicInfoBox > div > p:first-child {
+  font-weight: bold;
+}
+
+.characterComicInfo .characterComicInfoBox > div > p:last-child {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* FAVORIS */
+.charactersCol3 {
+  width: 200px;
+  height: 490px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: 0 10px;
+  margin-bottom: 60px;
+}
+
+.charactersCol3 > p:first-child {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-weight: 24px;
+}
+
+.charactersCol3 .favCharactersBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.charactersCol3 .favCharactersBox .favCharacterImage {
+  border-radius: 5px;
+}
+
+.charactersCol3 .favCharactersBox > div:hover {
+  cursor: pointer;
 }
 
 /* .charactersMain .charactersCol1 {
@@ -95,4 +277,5 @@
 .sc-gzVnrw => ensemble des carrés
 .bVoXXg => chaque carré 
 .jWpUJH => les "dots" de pagination
+.sc-bwzfXH => les deux boutons prev et next
 */
